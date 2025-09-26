@@ -37,7 +37,7 @@ frutas2.reduce((acc,fruta)=>{
 const usuarios = [
     {id: 1, nombre:"Jose", edad:25, data:{books:100}},
     {id: 2, nombre:"Manuel", edad:30, data:{books:80}},
-    {id: 3, nombre:"Fernando", edad:37, data:{books:50}}
+    {id: 3, nombre:"Fernando", edad:37, data:{books:50}},
     {id: 4, nombre:"Javi", edad:19, data:{books:0}},
     {id: 5, nombre:"Manuel", edad:24, data:{books:63}},
     {id: 6, nombre:"Fernando", edad:40, data:{books:50}}
@@ -59,17 +59,24 @@ usuarios.
 usuarios.find(usuarios=>Numero(usuarios.data.books)==0).nombre ?? {}
 
 
-const productos = [
+const products = [
     {id:1, nombre:"Laptop", precio:1200, stock:5, categoría:"Tecnología"},
-    {id:2, nombre:"Camiseta", precio:1200, stock:5, categoría:"Tecnología"},
-    {id:3, nombre:"Monitor", precio:1200, stock:5, categoría:"Tecnología"},
-    {id:4, nombre:"Libro", precio:1200, stock:5, categoría:"Tecnología"},
-    {id:5, nombre:"Móvil", precio:1200, stock:5, categoría:"Tecnología"},
-    {id:6, nombre:"Pantalón", precio:1200, stock:5, categoría:"Tecnología"}
+    {id:2, nombre:"Camiseta", precio:35, stock:15, categoría:"Ropa"},
+    {id:3, nombre:"Monitor", precio:300, stock:0, categoría:"Tecnología"},
+    {id:4, nombre:"Libro", precio:20, stock:50, categoría:"Literatura"},
+    {id:5, nombre:"Móvil", precio:800, stock:10, categoría:"Tecnología"},
+    {id:6, nombre:"Pantalón", precio:60, stock:5, categoría:"Ropa"}
 ];
 
 // Se pide:
 // 1.- Obtener un array con los nombres de todos los productos que están agotados.
+products.find(products=>Number(products.stock)=0).nombre ?? []
+
 // 2.- Calcular el valor total del inventario (precio*stock) de todos los productos.
+
+
 // 3.- Filtarar los productos que pertenecen a la categoría "Tecnología" y tienen un precio mayo a 500.
+products.find(products=>products.categoría==="Tecnología"&&Number(products.precio)>500) ?? {};
+
 // 4.- Crear un nuevo array de productos aplicando un descuento del 10% a todos los productos de la categoría "Ropa".
+
