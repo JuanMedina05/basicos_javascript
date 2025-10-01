@@ -1,10 +1,13 @@
+// .map <- para recorrer un array
+// .concat <- concatena array
+
 // .at <--acceso con índices negativos.
 
 const frutas = ["manzanas", "peras", "melocotones", "flan"];
 console.log(frutas.at(-2)); // melocotones
 console.log(frutas.slice(-2)); // melocotones, flan
 
-// split ---> frutas.splice(1,2) <-- elimina 2 2lementos desde la posicion 1
+// .splice ---> frutas.splice(1,2) <-- elimina 2 elementos desde la posicion 1
 
 
 // SET <-- Otro tipo de datos (datos únicos)
@@ -13,7 +16,7 @@ const pesos = [4,5,3,2,5,6,4,4,3,7,1,0];
 
 const sinDuplicados =[...new Set(pesos)] // <-- usamos set para crear elementos únicos.
 
-// .reduce (reducir un array a un único valor)
+// .reduce <- reducir un array a un único valor
 
 // acumulador, elementos <-- no son opcionales
 
@@ -70,7 +73,7 @@ const products = [
 
 // Se pide:
 // 1.- Obtener un array con los nombres de todos los productos que están agotados.
-products.find(products=>Number(products.stock)=0).nombre ?? []
+products.find(products=>Number(products.stock)=0).nombre ?? [];
 
 // 2.- Calcular el valor total del inventario (precio*stock) de todos los productos.
 
@@ -79,4 +82,3 @@ products.find(products=>Number(products.stock)=0).nombre ?? []
 products.find(products=>products.categoría==="Tecnología"&&Number(products.precio)>500) ?? {};
 
 // 4.- Crear un nuevo array de productos aplicando un descuento del 10% a todos los productos de la categoría "Ropa".
-
